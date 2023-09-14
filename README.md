@@ -1,2 +1,3 @@
 # dcode-gallery
-a sound gallery acompanying the d:code photo exhibition
+
+a sound gallery accompanying the d:code photo exhibition
