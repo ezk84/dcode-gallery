@@ -1,91 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>d:code</title>
+        <style>
+            body {
+                margin: 0;
+                background-color: #690f1f;
+                font-family: Arial, sans-serif;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>d:code</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: #690f1f;
-            font-family: Arial, sans-serif;
-        }
+            .image-container {
+                width: 100vw;
+                overflow: hidden;
+            }
 
-        .image-container {
-            width: 100vw;
-            overflow: hidden;
-        }
+            img {
+                width: 100%;
+                transition: opacity 0.3s;
+            }
 
-        img {
-            width: 100%;
-            transition: opacity 0.3s;
-        }
+            img:active {
+                opacity: 0.6;
+            }
+        </style>
+    </head>
 
-        img:active {
-            opacity: 0.6;
-        }
+    <body>
+        <!-- Image 1 -->
+        <div class="image-container">
+            <a
+                href="player.html?media=media/OYÈMI_de.code_Mix_NEW!.mp3&artist=OYÈMI&song=Mix NEW!"
+            >
+                <img src="img/01.jpg" alt="Description of Image 1" />
+            </a>
+        </div>
 
-    </style>
-</head>
+        <!-- Image 2 -->
+        <div class="image-container">
+            <a
+                href="player.html?media=media/RUSNAM_feat_Dima_de.code_MIX_1.mp3&artist=RUSNAM feat Dima&song=Mix 1"
+            >
+                <img src="img/02.jpg" alt="Description of Image 2" />
+            </a>
+        </div>
 
-<body>
+        <!-- Image 3 -->
+        <div class="image-container">
+            <a
+                href="player.html?media=media/RUSNAM_feat._Cham_Saloum_RAW_Mix.mp3&artist=RUSNAM feat Cham Soloum&song=RAW Mix"
+            >
+                <img src="img/03.jpg" alt="Description of Image 3" />
+            </a>
+        </div>
 
-    <!-- Image 1 -->
-    <div class="image-container">
-        <a href="player-01.html"><img src="img/01.jpg" alt="Description of Image 1"></a>
-    </div>
+        <!-- Image 4 -->
+        <div class="image-container">
+            <a
+                href="player.html?media=media/RUSNAM_feat._IPEK_de.code.mp3&artist=RUSNAM feat. IPEK&song=Unknown"
+            >
+                <img src="img/04.jpg" alt="Description of Image 4" />
+            </a>
+        </div>
 
-    <!-- Image 2 -->
-    <div class="image-container">
-        <a href="player-02.html"><img src="img/02.jpg" alt="Description of Image 2"></a>
-    </div>
+        <!-- Image 5 -->
+        <div class="image-container">
+            <a
+                href="player.html?media=media/RUSNAM_feat._KIM_de.code.mp3&artist=RUSNAM feat. KIM&song=Unknown"
+            >
+                <img src="img/05.jpg" alt="Description of Image 5" />
+            </a>
+        </div>
 
-    <!-- Image 3 -->
-    <div class="image-container">
-        <a href="player-03.html"><img src="img/03.jpg" alt="Description of Image 3"></a>
-    </div>
+        <!-- Image 6 -->
+        <div class="image-container">
+            <a
+                href="player.html?media=media/RUSNAM_feat._SAMIRA_RAW_MIX.mp3&artist=RUSNAM feat. SAMIRA&song=RAW MIX"
+            >
+                <img src="img/06.jpg" alt="Description of Image 6" />
+            </a>
+        </div>
 
-    <!-- Image 4 -->
-    <div class="image-container">
-        <a href="player-04.html"><img src="img/04.jpg" alt="Description of Image 4"></a>
-    </div>
+        <!-- Image 7 -->
+        <div class="image-container">
+            <a
+                href="player.html?media=media/RUSNAM_feat._SERA_KALO_de.code_RAW_MIX.mp3&artist=RUSNAM feat. SERA KALO&song=RAW MIX"
+            >
+                <img src="img/07.jpg" alt="Description of Image 7" />
+            </a>
+        </div>
 
-    <!-- Image 5 -->
-    <div class="image-container">
-        <a href="player-05.html"><img src="img/05.jpg" alt="Description of Image 5"></a>
-    </div>
+        <!-- Image 8 -->
+        <div class="image-container">
+            <a
+                href="player.html?media=media/RUSNAM_feat._ZEYNEP_de.code_RAW_MIX.mp3&artist=RUSNAM feat. ZEYNEP&song=RAW MIX"
+            >
+                <img src="img/08.jpg" alt="Description of Image 8" />
+            </a>
+        </div>
 
-    <!-- Image 6 -->
-    <div class="image-container">
-        <a href="player-06.html"><img src="img/06.jpg" alt="Description of Image 6"></a>
-    </div>
+        <script>
+            function setAspectRatio() {
+                let ratio = window.innerWidth / window.innerHeight;
+                let containers = document.querySelectorAll(".image-container");
+                containers.forEach((container) => {
+                    container.style.height =
+                        container.clientWidth / ratio + "px";
+                });
+            }
 
-    <!-- Image 7 -->
-    <div class="image-container">
-        <a href="player-07.html"><img src="img/07.jpg" alt="Description of Image 7"></a>
-    </div>
+            // Initial set up
+            setAspectRatio();
 
-    <!-- Image 8 -->
-    <div class="image-container">
-        <a href="player-08.html"><img src="img/08.jpg" alt="Description of Image 8"></a>
-    </div>
-
-    <script>
-        function setAspectRatio() {
-            let ratio = window.innerWidth / window.innerHeight;
-            let containers = document.querySelectorAll('.image-container');
-            containers.forEach((container) => {
-                container.style.height = (container.clientWidth / ratio) + 'px';
-            });
-        }
-
-        // Initial set up
-        setAspectRatio();
-
-        // Update if window is resized - optional
-        window.addEventListener('resize', setAspectRatio);
-    </script>
-</body>
-
+            // Update if window is resized
+            window.addEventListener("resize", setAspectRatio);
+        </script>
+    </body>
 </html>
