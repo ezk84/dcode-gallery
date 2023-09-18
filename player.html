@@ -123,7 +123,7 @@
                 return params;
             }
 
-            window.onload = function () {
+            window.addEventListener("load", () => {
                 let params = getQueryParams(window.location.href);
 
                 // Set audio source, artist, and song name from the URL parameters
@@ -137,7 +137,7 @@
                 if (params.song) {
                     document.getElementById("songName").innerText = params.song;
                 }
-            };
+            });
         </script>
     </body>
 </html>
