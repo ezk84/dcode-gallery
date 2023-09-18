@@ -9,6 +9,26 @@
                 margin: 0;
                 background-color: #690f1f;
                 font-family: Arial, sans-serif;
+
+                overflow: hidden; /* Prevents scrolling while the splash screen is visible */
+            }
+
+            #splash {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: white; /* In case the image doesn't cover the full screen */
+                z-index: 9999; /* Ensure it's above all other content */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #splash img {
+                max-width: 100%;
+                max-height: 100%;
             }
 
             .image-container {
@@ -28,6 +48,11 @@
     </head>
 
     <body>
+        <!-- Splash Screen -->
+        <div id="splash">
+            <img src="img/de_code_LOGO.jpg" alt="de:code splash image" />
+        </div>
+
         <!-- Image 1 -->
         <div class="image-container">
             <a
@@ -115,6 +140,19 @@
 
             // Update if window is resized
             window.addEventListener("resize", setAspectRatio);
+
+            window.addEventListener("load", () => {
+                const splash = document.getElementById("splash");
+
+                setTimeout(() => {
+                    splash.style.transition = "opacity 0.5s";
+                    splash.style.opacity = "0";
+                    setTimeout(() => {
+                        splash.style.display = "none";
+                        document.body.style.overflow = "auto"; // Enables scrolling after splash disappears
+                    }, 500);
+                }, 0);
+            });
         </script>
     </body>
 </html>
